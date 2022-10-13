@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Momentum APP</title>
+</head>
+<body>
+    <h1 class="titleClass">Grab me H1</h1>
+    
+    <div class="hello">
+        <h1>Grab Me DIV-H1</h1>
+    </div>
+
+    <div class="hello">
+        <h1>Grab Me DIV-H1</h1>
+    </div>
+
+    <div id="hello" class="hello">
+        <h1>Grab Me DIV-H1 ID</h1>
+    </div>
+    
+
+
+    <script>
+
+
+//const title = document.querySelector("div:nth-child(1)"); 
+const title = document.querySelector("div.helloClass:first-child h1"); 
+//const className = title.className;
+console.log(title);
+console.dir(title);
+
+function handleTitleClick(){
+    console.log("title was clicked");
+    title.style.color = "blue";
+    title.innerHTML = "클릭하자!";
+}
+
+//title.addEventListener("click", handleTitleClick);
+title.onclick = handleTitleClick;
+//title.onmouseenter = handleTitleClick;
+
+function handleWindowResize(){
+    document.body.style.backgroundColor = "tomato";
+}
+window.addEventListener("resize", handleWindowResize);
+
+function  handleWindowCopy(){
+    alert("copy!");
+}
+window.addEventListener("copy", handleWindowCopy);
+
+function handleWindowOffline(){
+    alert("SOS no wifi");
+}
+window.addEventListener("offline", handleWindowOffline);
+
+function handleWindowOnline(){
+    alert("ALL GOODDDDD"); 
+} 
+window.addEventListener("online", handleWindowOnline);
+    </script>
+</body>
+</html>
